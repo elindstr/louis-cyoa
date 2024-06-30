@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Adventure Game</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        #game {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        #output {
+            white-space: pre-line;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="game">
+        <div id="0">
+            It's 102 degrees. There's a pool outside. There's a Switch console in the living room. There's a computer on the table. There's a magic globe on the table. There's a bouquet of beautiful flowers next to the computer. You smell something good baking in the over. There's a knife hanging. There's a bathroom down a hallway. There's a string hanging from the ceiling. What would you like to do? <br><br> 
+
+            <button onclick="reveal('0Pool')">Swim in the pool</button><br>
+            <button onclick="reveal('0Switch')">Turn on the switch</button><br>
+            <button onclick="reveal('0Computer')">Look at the computer</button><br>
+            <button onclick="reveal('0MagicGlobe')">Examine the magic globe</button><br>
+            <button onclick="reveal('0Flowers')">Smell the flowers</button><br>
+            <button onclick="reveal('0Oven')">Check out what's baking</button><br>
+            <button onclick="reveal('0Knife')">Play with the knife</button><br>
+            <button onclick="reveal('0Bathroom')">Go to the bathroom</button><br>
+            <button onclick="reveal('0Outside')">Go outside</button><br>
+            <button onclick="reveal('0Attic')">Pull string</button><br>
+        </div>
+        <div id="0Pool" class="hidden">
+            You drowned!<br>
+            <button onclick="goBack()">Back</button>
+        </div>
+        <div id="0Switch" class="hidden">
+            You got electrocuted!<br>
+            <button onclick="goBack()">Back</button>
+        </div>
+        <div id="0Computer" class="hidden">
+            Login password please:<br>
+            <input type="text"><br>
+            <button onclick="reveal('wrongPassword')">Submit</button><br>
+            <button onclick="goBack()">Back</button>
+        </div>
+        <div id="wrongPassword" class="hidden">
+            Wrong! The computer blew up and you died.<br>
+            <button onclick="goBack()">Back</button>
+        </div>
+        <div id="0MagicGlobe" class="hidden">
+            You look into the magic globe. It's cloudy. Then the clouds begin to dissipate and you can make out writing. What does it say? You have to get closer and stare hard to read. When you get super close, suddenly a hand reaches out of the globe and stabs you with a very sharp carrot. You're dead.<br>
+            <button onclick="goBack()">Back</button>
+        </div>
+        <div id="0Flowers" class="hidden">
+            MMMMmmmmm! They smell so sweet... Wait a sec. *cough* *cough* *cough* ... What's happening? OH MY GOD! You forgot you're allergic to pollen! It's deep in your lungs. You can't breathe. You black out. And die.<br>
+            <button onclick="goBack()">Back</button>
+        </div>
+        <div id="0Knife" class="hidden">
+            You pick up the knife and start playing with it. Then you realize you're super clumbsy. Oops! You trip and the knife flies into the air and falls pointy end flying down, it sinks into your spinal cord. You spasm. And die.
+            <br>
+            <button onclick="goBack()">Back</button>
+        </div>
+        <div id="0Oven" class="hidden">
+            MMMMmmmmm! It smells so inviting. You get closer. You can't see through the glass. So you open the door to peek inside. MMM! You see chocolate chip cookies baking! They look so good. They're almost done. ---- Suddenly an old witch jumps out and kicks you into the oven! You're dead.<br>
+            <button onclick="goBack()">Back</button>
+        </div>
+        <div id="0Bathroom" class="hidden">
+             You go into the bathroom. You trip and fall into the toilet. You make a big splash and the water makes the toilet flush and get stuck in the pipes,so you don't get any food. You died.
+            <br>
+            <button onclick="goBack()">Back</button>
+        </div>
+        <div id="0Outside" class="hidden">
+            You go outside and see a rare butterfly and start chasing it and you chase it for another hour you start to heat up and you start burning up. You died.
+           <br>
+           <button onclick="goBack()">Back</button>
+       </div>
+       <div id="0Attic" class="hidden">
+            You pull the string and a piece of the ceiling swings down and you realize you found the attic! You walk in and then a monster grabs you and strangles you! You died.
+        <br>
+        <button onclick="goBack()">Back</button>
+    </div>
+    </div>
+    <script>
+        function reveal(id) {
+            const sections = document.querySelectorAll("#game > div");
+            sections.forEach(section => section.style.display = "none");
+            document.getElementById(id).style.display = "block";
+        }
+
+        function goBack() {
+            const sections = document.querySelectorAll("#game > div");
+            sections.forEach(section => section.style.display = "none");
+            document.getElementById("0").style.display = "block";
+        }
+    </script>
+</body>
+</html>
