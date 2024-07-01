@@ -30,7 +30,7 @@
 <body>
     <div id="game">
         <div id="0">
-            It's 102 degrees. There's a pool outside. There's a Switch console in the living room. There's a computer on the table. There's a magic globe on the table. There's a bouquet of beautiful flowers next to the computer. You smell something good baking in the over. There's a knife hanging. There's a bathroom down a hallway. There's a string hanging from the ceiling. What would you like to do? <br><br> 
+            It's 102 degrees. There's a pool outside. There's a Switch console in the living room. There's a computer on the table. There's a magic globe on the table. There's a bouquet of beautiful flowers next to the computer. You smell something good baking in the oven. There's a knife lying on a cutting board. There's a bathroom down a hallway. There's a string hanging from the ceiling. What would you like to do? <br><br> 
 
             <button onclick="reveal('0Pool')">Swim in the pool</button><br>
             <button onclick="reveal('0Switch')">Turn on the switch</button><br>
@@ -39,6 +39,7 @@
             <button onclick="reveal('0Flowers')">Smell the flowers</button><br>
             <button onclick="reveal('0Oven')">Check out what's baking</button><br>
             <button onclick="reveal('0Knife')">Play with the knife</button><br>
+            <button onclick="reveal('0cuttingBoard')">Grab cutting board</button><br>
             <button onclick="reveal('0Bathroom')">Go to the bathroom</button><br>
             <button onclick="reveal('0Outside')">Go outside</button><br>
             <button onclick="reveal('0Attic')">Pull string</button><br>
@@ -71,6 +72,11 @@
         </div>
         <div id="0Knife" class="hidden">
             You pick up the knife and start playing with it. Then you realize you're super clumbsy. Oops! You trip and the knife flies into the air and falls pointy end flying down, it sinks into your spinal cord. You spasm. And die.
+            <br>
+            <button onclick="goBack()">Back</button>
+        </div>
+        <div id="0cuttingBoard" class="hidden">
+            You grab the cutting board and it slips from your hand and it breaks your toe and you pick up your leg in pain and loose your balance and hit your head on the knife and it cuts your head open! You died.
             <br>
             <button onclick="goBack()">Back</button>
         </div>
